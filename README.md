@@ -5,7 +5,7 @@ Codex plugin for [GCF Proxy](https://github.com/blackwell-systems/gcf-proxy). Re
 ## Install
 
 ```bash
-codex plugin install blackwell-systems/gcf-codex-plugin
+codex plugin add gcf-proxy
 ```
 
 ## What it does
@@ -48,6 +48,18 @@ This modifies your MCP config to route the server through gcf-proxy. The origina
 1. **First call (71% savings):** GCF encodes the same structured data in 71% fewer tokens than JSON. The model reads GCF natively with 100% comprehension accuracy.
 2. **Subsequent calls (up to 92%):** Session deduplication detects repeated structure. Only deltas are transmitted.
 3. **Zero code changes:** The proxy wraps any MCP server. The server still outputs JSON; the proxy re-encodes before it reaches the model.
+
+## Cost example
+
+A team running 1,000 queries/day with GPT-5.5 ($5/MTok input):
+
+| Format | Monthly cost | Annual cost |
+|--------|-------------|-------------|
+| JSON | $12,098 | $145,171 |
+| GCF | $3,549 | $42,583 |
+| **Savings** | **$8,549/mo** | **$102,588/yr** |
+
+[Try the cost calculator](https://gcformat.com/calculator) with your own numbers.
 
 ## Links
 
